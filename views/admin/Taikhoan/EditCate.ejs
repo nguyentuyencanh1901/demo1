@@ -1,0 +1,35 @@
+<%- include('../header.ejs') %>
+
+<div class="container mt-3">
+  <h1>sửa Tài Khoản </h1>
+
+  <form action="/post-edit-Taikhoan" method="post" >
+
+
+    <div class="mb-3 mt-3">
+        <label for="name">Name :</label>
+        <input type="text" class="form-control" value="<%= cate.name %>" placeholder="Nhập Tên" name="name">
+    </div>
+    <input type="hidden" name="id" value="<%= cate.id %>">
+
+
+    <div class="mb-3">
+        <label for="Email">Email : </label>
+        <input type="text" class="form-control" value="<%= cate.email %>" placeholder="Nhập Email" name="email">
+    </div>
+    <div class="mb-3">
+        <label for="">password : </label>
+        <input type="password" class="form-control" value="<%= cate.password %>" placeholder="Nhập Mật khẩu" name="password">
+    </div>
+
+
+
+    
+   
+    <button type="submit" class="btn btn-primary">Lưu lại</button>
+    <a href="/Taikhoan" class="btn btn-danger">Quay lại</a>
+  </form>
+</div>
+
+
+<%- include('../footer.ejs') %>

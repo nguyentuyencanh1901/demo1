@@ -1,0 +1,58 @@
+
+
+
+.cart {
+    background-color: #fff;
+    
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #DE8EBE;
+}
+
+.cart table th,
+.cart table td {
+    
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart table th {
+    background-color: #f2f2f2;
+}
+
+.cart table td {
+    vertical-align: middle;
+}
+
+.cart .total {
+    text-align: right;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.cart .actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.cart .actions a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #DE8EBE;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.cart .actions a:hover {
+    background-color: rgb(236, 0, 146);
+}

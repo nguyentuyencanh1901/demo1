@@ -1,0 +1,120 @@
+<%- include('../header.ejs') %>
+
+<h2 style="text-align:center;margin:20px 0px">Trang Sản Phẩm Thú Cưng</h2>
+
+<div class="container-fluid">
+
+  <div class="row " style="margin:20px 0px">
+
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+
+      <div class="row">
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <a href="/add-Sanpham" class="btn btn-outline-primary" style='font-size:19px;width:100%;margin:20px 0px'>Thêm Mới <i class='fas fa-edit'></i></a>
+        </div>
+
+
+
+      </div>
+
+    </div>
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+
+
+      <form class="form-inline" action="/tk-Sanpham/search" method="get" role="form">
+
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="margin:20px 0px">
+
+          <div class="row" style="width:350px">
+
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <input class="form-control me-2" type="text" name="key" placeholder="Search">
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <button class="btn btn-outline-primary" type="submit">Search</button>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+
+      <th>Name</th>
+      <th>Mã Loại</th>
+      <th>Nhà Cung cấp </th>
+      <th>Giá</th>
+      <th>Giảm giá</th>
+      <th>Mô Tả</th>
+      <th>Hình ảnh</th>
+      <th>Trạng thái</th>
+      <th>Chức năng</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% catcat.forEach(item=>{%>
+    <tr>
+
+      <td><%=item.name%></td>
+      <td><%=item.chungloai_id%></td>
+      <td><%=item.nhacungcap_id%></td>
+      <td> <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.gia) %> $</td>
+      <td> <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.giamgia) %> $</td>
+
+      <td style="width:300px"><%=item.mota%></td>
+      <td><img src="../img/<%=item.img%>" alt="" width="200px"></td>
+      <td>
+        <% if(trangthai == 1){ %>
+        <% if(item.trangthai == 1) %>
+        Hieenr thij
+        <% } else {%>
+        An
+        <% }%>
+      </td>
+
+
+
+      <td style="width:150px">
+        <form action="/Sanpham/delete/<%= item.id %>" method="post">
+
+          <a href="/edit-Sanpham/<%= item.id %>" class="btn btn-outline-primary"><i class='fas fa-wrench' style='font-size:15px;color:blue'> Sửa </i></a>
+
+          <button type="submit" class="btn btn-outline-danger"><i class='fas fa-backspace' style='font-size: 15px;color:red'> xóa</i></button>
+
+
+        </form>
+      </td>
+
+    </tr>
+    <%})%>
+
+  </tbody>
+
+
+</table>
+</div>
+</div>
+
+
+
+
+<%- include('../footer.ejs') %>

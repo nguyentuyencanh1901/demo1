@@ -1,0 +1,43 @@
+<%- include('../header.ejs') %>
+
+<div class="container mt-3">
+  <h2>Thêm mới</h2>
+
+  
+  <form action="/post-add-Chungloai" method="post" >
+    <div class="container mt-3">
+       
+          <div class="mb-3">
+              <label for="">loài cây : </label>
+              <select name="trangthai" class="form-select">
+                  <option value="0">Chọn trạng thái cho sản phẩm</option>
+                  <option value="1">Cây Bonsai</option>
+                  <option value="2">Cây xương Rồng</option>
+                  <option value="3">Cây Trong Nhà</option>
+                  <option value="3">Cây Văn Phòng</option>
+              </select>
+          </div>
+  
+  
+          <div class="mb-3 ">
+              <label for="">Giống Cây :</label>
+              <input type="text" class="form-control" placeholder="Nhập giống cây ..." name="name">
+          </div>
+  
+  
+  
+  
+          <div class="mb-3">
+              <label for="">Tên Cây : </label>
+              <input type="text" class="form-control" placeholder="Nhập tên cây..." name="filename">
+          </div>
+          
+  
+       
+          <button type="submit" class="btn btn-primary">Lưu lại</button>
+          <a href="/chungloai" class="btn btn-danger">Quay lại</a>
+      </form>
+  </div>
+  
+</div>
+<%- include('../footer.ejs') %>

@@ -1,0 +1,72 @@
+.ngancanh label {
+    font-weight: 700;
+  }
+  
+  
+  
+  .from-input {
+    border: 2px dashed #86c200;
+    border-radius: 10px;
+    display: block;
+    width: 95%;
+    padding: 5px 5px;
+    margin: 5px 0px;
+  }
+  
+  .textra {
+    display: block;
+    width: 95%;
+    padding: 5px 5px;
+    margin: 5px 0px;
+    border-radius: 10px;
+  }
+  
+  
+  
+  .lienhe_header h1 {
+    text-align: center;
+    color: #333;
+    font-weight: 800;
+  }
+  
+  .lienhe_header .buttonn {
+    padding: 5px 0px;
+    color: white;
+    font-weight: 600;
+    background-color: #86c200;
+    border: 2px dashed #fff;
+    width: 60% !important;
+    margin: 10px 120px !important;
+  
+  }
+  
+  button {
+    
+    border-radius: 10px !important;
+  }
+  
+  .lienhe_header .buttonn {
+    transition: transform .3s;
+  }
+  
+  .lienhe_header .buttonn:hover {
+    transform: scale(1.2);
+  }
+  .ngancanh {
+
+    
+    padding: 20px 20px;
+    margin: 30px 200px !important;
+    width: 70%;
+    border-radius: 10px;
+  
+  }
+  .cogoo img {
+    /* width: 250px; */
+    /* height:270px; */
+  
+    transition: transform .2s;
+  }
+  
+  
+

@@ -1,0 +1,69 @@
+<%- include('../header.ejs') %>
+
+<h2 style="text-align: center;">Trang chủng Loại </h2>
+<div class="container mt-3">
+
+<div class="row "style="margin:20px 0px">
+
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-4" style="text-align:center">
+
+    <a href="/add-Chungloai" class="btn btn-outline-primary" style='font-size:19px'>Thêm Mới <i class='fas fa-edit'></i></a>
+</div>
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-8" >
+    <form class="d-flex" style="width:500px">
+        <input class="form-control me-2" type="text" placeholder="Search" required>
+        <button class="btn btn-outline-primary"  type="button">Search</button>
+    </form>
+</div>
+</div>
+
+    
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>id</th>
+                    <th>Tên Loài</th>
+                    <th>Name</th>    
+                    <th>Trạng thái</th>
+                    <th>Chức năng </th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+
+              <% cat.forEach(item=>{%>
+
+                <tr>
+
+                    <td><input type="checkbox"></td>
+                    <td><%=item.id%></td>
+                    <td><%=item.filename%></td>
+                    <td><%=item.name%></td>
+                    
+                    
+                    <td>
+                        <% if(item.trangthai == 2){ %>
+                        Hieenr thij
+                        <% } else {%>
+                        An
+                        <% }%>
+                      </td>
+                    <td>
+                        <form action="/chungloai/delete/<%= item.id %>" method="post">
+                        <a href="/edit-Chungloai/<%= item.id %>" class="btn "><i class='fas fa-wrench' style='font-size:22px;color:blue'></i></a>
+                     
+                        <button type="submit" class="btn "><i class='fas fa-backspace' style='font: size 22px;color:red' ></i></button>
+                        </form>
+                    </td>
+
+                </tr>
+                <%})%>
+            </tbody>
+
+        </table>
+</div>
+
+
+<%- include('../footer.ejs') %>

@@ -1,0 +1,9 @@
+.main-sidebar{
+   background-color: #86c200;
+}
+.text{
+    color: #fff ;
+}
+.text:hover{
+    color: red !important;
+}

@@ -1,0 +1,98 @@
+<%- include('../Trangnguoidung/Header') %>
+
+<link rel="stylesheet" href="../dist/css/Sanpham.css">
+<div class="container" style="margin-top: 20px;">
+  <div class="row">
+
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <div class="danhmuc" style="border-bottom: 2px solid #86c200;width: 80%;">
+        <h2 style="color: black;font-weight: 600;padding-top: 15px;">DANH MỤC </h2>
+        <ul >
+          <% cl.forEach(item=>{%>
+          <li><a class="dropdown-item" href="/nd-sanpham/<%=item.id%>"><%=item.name%></a></li>
+          <%})%>
+        </ul>
+      </div>
+      <div class="left">
+        <h2 style="color: black;font-weight: 600; "> Sản Phẩm Liên Quan </h2>
+        <% catcat.forEach(item=>{%>
+        <div style="display: flex; ">
+          <div style="border: 1px solid #86c200;width: 80%;padding: 0px 5px;">
+
+            <a href="/Chi-tiet/<%=item.id%>"> <img src="/img/<%=item.img%>" alt="" title="<%=item.name%>" width="70px" style="float: left;margin-right: 20px;"></a>
+
+            <div>
+              <h5 style="color:black;"><%=item.name%></h5>
+              <del style="color: red;font-size:15px; ">
+                Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.gia,) %> $</del>
+              <b style="color:black;font-size:15px;">Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.giamgia,) %> $</b>
+            </div>
+          </div>
+
+        </div>
+
+        <%})%>
+      </div>
+
+    </div>
+
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"  >
+      <div class="big-card" style="width: 800px;">
+        <h2 style="font-size: 35px;">Sản Phẩm </h2>
+        
+          <div class="row">
+            <% sp.forEach(item=>{%>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" >
+              <div style="margin: 20px 0px; border: 1px solid #ddd;padding-bottom: 20px ;">
+
+                <div class="cardd" >
+                  <a href="/Chi-tiet/<%=item.id%>"> <img class="img" src="/img/<%=item.img%>" alt="Card image"  title="<%=item.name%>" width="166px"></a>
+                  <div class="card-body">
+                    <h5 class="card-title" style="color: black;"><%=item.name%></h5>
+                    <p class="card-text" style="color: black;text-align: center;">
+                      <del style="color: red; ">
+                        Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.gia,) %> $</del>
+                      Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.giamgia,) %> $
+                    </p>
+                    <a href="#" class=" button" style="width: 200px;">THÊM VÀO GIỎ</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            
+            <%})%>
+          </div>
+
+
+      
+      </div>
+
+      <style>
+        .pagination a {
+          color: black;
+          float: left;
+          padding: 8px 16px;
+          text-decoration: none;
+          transition: background-color .3s;
+        }
+        
+        .pagination a.active {
+          background-color: dodgerblue;
+          color: white;
+        }
+        
+        .pagination a:hover:not(.active) {background-color: #ddd;}
+        </style>
+  
+    </div>
+
+  </div>
+ 
+</div>
+
+
+
+<%- include('../Trangnguoidung/Footer') %>

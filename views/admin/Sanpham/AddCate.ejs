@@ -1,0 +1,84 @@
+<%- include('../header.ejs') %>
+
+
+  
+
+  
+  <div class="container mt-3">
+    <h1>Thêm mới sản phẩm</h1>
+
+    <form action="/post-add-Sanpham" method="post" enctype="multipart/form-data" >
+
+
+
+
+        <div class="mb-3 mt-3">
+            <label for="name">Name :</label>
+            <input type="text" class="form-control" placeholder="Nhập Tên" name="name" required>
+        </div>
+        <div class=" mb-3">
+            <label for="Gia">Giá : </label>
+            <input type="number" class="form-control" placeholder="Nhập giá" name="gia" required>
+        </div>
+        <div class=" mb-3">
+            <label for="Gia" >Giảm giá : </label>
+            <input type="number" class="form-control"  placeholder="Nhập giá" name="giamgia" required>
+        </div>
+        <div class="mb-3">
+            <label for="Mota">Mô Tả :</label>
+            <textarea class="form-control" rows="5" name="mota" required></textarea>
+        </div>
+
+       
+     
+
+        
+        <div class="mb-3">
+            
+            <label for="">Mã Loài:</label>
+            <select name="chungloai">
+                <option value="#" required>Mã loại</option>   
+                <% cl.forEach(item=>{%>
+                         
+                <option value="<%=item.id%>"><%=item.name%></option>
+               <% }) %>
+
+            </select>
+            
+        </div>
+        
+        <div class="mb-3">
+            <label for="">Nhà Cung cấp :</label>
+            <select name="nhacungcap">
+                <% ncc.forEach(item=>{%>
+                    <option value="#" required>Nhà Cung cấp</option>            
+                    <option value="<%=item.id%>"><%=item.name%></option>
+                   <% }) %>
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="">Chọn ảnh :</label>
+            <input type="file"  name="hinhanh">
+        </div>
+
+
+        <div class="mb-3">
+            <label for="Trangthai">Trạng Thái : </label>
+            <select name="trangthai" value="" class="form-select" required>
+                <option value="0">Chọn trạng thái cho sản phẩm</option>
+                <option value="1">Sản Phẩm hot</option>
+                <option value="2">Sản Phẩm nổi bật nhất</option>
+                <option value="3">Sản Phẩm văn phòng</option>
+                <option value="4">Sản Phẩm trong nhà</option>
+            </select>
+        </div>
+
+       
+        <button type="submit" class="btn btn-primary">Lưu lại</button>
+        <a href="/Sanpham" class="btn btn-danger">Quay lại</a>
+    </form>
+</div>
+
+<%- include('../footer.ejs') %>

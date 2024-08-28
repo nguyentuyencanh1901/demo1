@@ -1,0 +1,63 @@
+<%- include('../Trangnguoidung/Header') %>
+
+<link rel="stylesheet" href="../dist/css/giohang.css">
+<h1>Giỏ hàng của bạn </h1>
+<div class="container mt-3 cart">
+
+
+
+    <table class="table table-hover ">
+        <thead>
+            <tr>
+                <th colspan="4">
+                    Tổng số lượng :
+
+                    
+                </th>
+                <th>
+                </th>
+                <th></th>
+            </tr>
+            <tr>
+                
+                <th>Tên Sản phẩm</th>
+                <th>Giá</th>
+                <th>Mô tả</th>
+                <th>Hình ảnh</th>
+                <th>chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <% cat.forEach(item=>{%>
+                <tr>
+                  
+                  <td><%=item.name%></td>
+                  <td><%=item.giamgia%></td>
+                  <td style="width:300px"><%=item.mota%></td>
+                  <td><img src="../img/<%=item.img%>" alt="" width="200px"></td>
+          
+                  <td style="width:150px">
+                    <form action="" method="post">
+                      
+                      <a href="" class="btn btn-outline-primary"><i class='fas fa-wrench' style='font-size:15px;color:blue'>  Sửa </i></a>
+          
+                      <button type="submit" class="btn btn-outline-danger"><i class='fas fa-backspace' style='font-size: 15px;color:red'>  xóa</i></button>
+                      
+          
+                    </form>
+                  </td>
+          
+                </tr>
+                <%})%>
+        </tbody>
+    </table>
+    <a href="" class="btn btn-danger">Hủy Đơn Hàng</a>
+    <div class="actions">
+        <a href="/">Tiếp tục mua hàng</a>
+        <a href="">Thanh toán</a>
+
+    </div>
+</div>
+
+<%- include('../Trangnguoidung/Footer') %>

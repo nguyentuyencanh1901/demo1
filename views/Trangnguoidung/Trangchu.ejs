@@ -1,0 +1,162 @@
+<%- include('../Trangnguoidung/Header') %>
+
+<link rel="stylesheet" href="../dist/css/Trangchu.css">
+<div class="container-fluid" style="background-color: #cccccc41;padding: 20px 0px;">
+  <div class="container" style="padding: 20px 50px; margin: 0 auto;">
+    <div class="row">
+
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nav-lin">
+        <div class="icon">
+          <img src="/images/icon1.png" alt="" width="60px">
+        </div>
+        <div class="text">
+          <h4>Sắc Đẹp </h4>
+          <p>Biểu tượng của cái đẹp thiên nhiên , Thân thiện với môi trường và Cuộc sống</p>
+        </div>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nav-lin">
+        <div class="icon">
+          <img src="/images/icon2.png" alt="" width="60px">
+        </div>
+        <div class="text">
+          <h4>Tín Ngưỡng </h4>
+          <p>Biểu tượng của Tín Ngưỡng nhân gian đối với nhiều loại cây cổ và loại cây quý</p>
+        </div>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nav-lin">
+        <div class="icon">
+          <img src="/images/icon3.png" alt="" width="60px">
+        </div>
+        <div class="text">
+          <h4>May mắn</h4>
+          <p>Biểu tượng của May mắn , tâm linh cho người đam mê cây phong thủy và những cây lâu lăm</p>
+        </div>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nav-lin">
+        <div class="icon">
+          <img src="/images/icon4.png" alt="" width="60px">
+        </div>
+        <div class="text">
+          <h4>Sức Khỏe</h4>
+          <p>Biểu tượng của sức khỏe , tâm trạng sức khỏe sẽ tốt nếu luôn gần gũi thiên nhiên</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <div class="container" style="margin-top: 20px;">
+    <div class="" style="background-color: #fff;">
+      <h2 style="color: #86c200;padding: 5px 5px;font-weight: 600; text-align: center;">Khuyến Mãi Sản Phẩm Hot</h2>
+      <div style="display: flex; height: 280px;margin: 20px 0px;">
+        <% cattt.forEach(item=>{%>
+        <div class="" style="margin: 10px 8px; position: relative;" >
+           <a href="/Chi-tiet/<%=item.id%>">  <img class="img" src="/img/<%=item.img%>" alt="Card image" title="<%=item.name%>" width="200px" height="250px" > </a>
+          <p style="position: absolute; color: red;font-weight: 600; top:0; right: 0;padding: 3px 3px; background-color: #86c200;">HOT</p>
+        </div>
+        
+        <%})%>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="container" style="margin-top: 20px;">
+    <div class="big-card">
+      <h2>Bonsai</h2>
+      <div style="display: flex; height: 320px;margin: 20px 0px;">
+        <% cat.forEach(item=>{%>
+        <div class="cardd">
+         <a href="/Chi-tiet/<%=item.id%>"> <img class="img" src="/img/<%=item.img%>" alt="Card image" title="<%=item.name%>" width="166px"></a>
+         
+          <div class="card-body">
+            <h5 class="card-title" style="color: black;"><%=item.name%></h5>
+            <p class="card-text" style="color: black;">
+              <del style="color: red; margin: 40px 10px;">
+                Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.gia,) %> $</del>
+              Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.giamgia,) %> $
+            </p>
+            <a href="" class=" button" style="width: 200px;">THÊM VÀO GIỎ</a>
+          </div>
+        </div>
+        <%})%>  
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="container" style="margin-top: 20px;" >
+    <div class="big-card"   >
+      <h2>Cây xương rồng</h2>
+      <div style="display: flex; height: 320px;margin: 20px 0px;">
+        <% cate.forEach(item=>{%>
+        <div class="cardd" >
+          <a href="/Chi-tiet/<%=item.id%>">   <img class="img" src="/img/<%=item.img%>" title="<%=item.name%>" alt="Card image" width="166px"  > </a>
+          <div class="card-body">
+            <h5 class="card-title" style="color: black;"><%=item.name%></h5>
+            <p class="card-text" style="color: black;">
+             <del style="color: red; margin: 40px 10px;"> 
+             Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.gia,) %> $</del>
+             Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.giamgia,) %> $
+            </p>
+            <a href="#" class=" button" style="width: 200px;">THÊM VÀO GIỎ</a>
+          </div>
+        </div>
+        <%})%>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 20px;" >
+    <div class="big-card"   >
+      <h2>Cây Trong Nhà</h2>
+      <div style="display: flex; height: 320px;margin: 20px 0px;">
+        <% tn.forEach(item=>{%>
+        <div class="cardd" >
+          <a href="/Chi-tiet/<%=item.id%>"> <img class="img" src="/img/<%=item.img%>" alt="Card image" title="<%=item.name%>" width="166px"  > </a>
+          <div class="card-body">
+            <h5 class="card-title" style="color: black;"><%=item.name%></h5>
+            <p class="card-text" style="color: black;">
+             <del style="color: red; margin: 40px 10px;"> 
+             Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.gia,) %> $</del>
+             Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.giamgia,) %> $
+            </p>
+            <a href="#" class=" button" style="width: 200px;">THÊM VÀO GIỎ</a>
+          </div>
+        </div>
+        <%})%>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 20px;" >
+    <div class="big-card"   >
+      <h2>Cây Văn Phòng</h2>
+      <div style="display: flex; height: 320px;margin: 20px 0px;">
+        <% vp.forEach(item=>{%>
+        <div class="cardd" >
+          <a href="/Chi-tiet/<%=item.id%>">    <img class="img" src="/img/<%=item.img%>" alt="Card image" title="<%=item.name%>" width="166px"  ></a>
+          <div class="card-body">
+            <h5 class="card-title" style="color: black;"><%=item.name%></h5>
+            <p class="card-text" style="color: black;">
+             <del style="color: red; margin: 40px 10px;"> 
+             Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.gia,) %> $</del>
+             Giá: <%= new Intl.NumberFormat('VND', { maximumSignificantDigits: 3 }).format(item.giamgia,) %> $
+            </p>
+            <a href="#" class=" button" style="width: 200px;">THÊM VÀO GIỎ</a>
+          </div>
+        </div>
+        <%})%>
+      </div>
+    </div>
+  </div>
+
+</div>
+<%- include('../Trangnguoidung/Footer') %>
